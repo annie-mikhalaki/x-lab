@@ -35,7 +35,7 @@ const SideMenu = () => {
             <div className={classes.sideTitleMenu}>Меню</div>
             <div className={classes.sideMenuButtons}>
                 {
-                    menuItems.map(item => <SideMenuItem {...item} />)
+                    menuItems.map((item, index) => <SideMenuItem key={`menuItem${index}`} {...item} />)
                 }
             </div>
         </nav>

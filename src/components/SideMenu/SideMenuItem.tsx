@@ -29,7 +29,7 @@ const SideMenuItem = (props: SideMenuButtonProps) => {
             <MenuButton {...props} {...hasSubItems ? { open, onClick: handleMenuButtonClick } : null} />
             {hasSubItems && open && (
                 <div className={classesSideMenu.sideMenuButtons}>
-                    {subItems.map(subItem => <MenuButton {...subItem} />)}
+                    {subItems.map((subItem, index) => <MenuButton key={`subItem${index}`} {...subItem} />)}
                 </div>
             )}
         </>

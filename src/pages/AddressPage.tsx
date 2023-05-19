@@ -79,7 +79,7 @@ const AddressPage = () => {
                             <div className={classes.addressItems}>
                                 {
                                     searchResult.length !== 0 &&
-                                    searchResult.map(item => <div className={classes.addressItem}>{item}</div>)
+                                    searchResult.map(item => <div key={item} className={classes.addressItem}>{item}</div>)
                                 }
                             </div>
                         </div>
