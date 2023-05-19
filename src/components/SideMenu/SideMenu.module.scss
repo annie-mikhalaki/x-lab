@@ -1,0 +1,73 @@
+@use "../../mixin.scss" as mixin;
+
+.SideMenu {
+   box-sizing: border-box;
+   line-height: mixin.$textLineHeigth;
+   font-size: mixin.$textSize;
+   width: 300px;
+   background: rgba(255, 255, 255, 0.05);
+   box-shadow: 0px 0px 5px rgba(2, 0, 96, 0.25);
+   height: calc(100vh - 80px);
+   overflow-x: scroll;
+   -ms-overflow-style: none;
+   scrollbar-width: none;
+
+   @include mixin.smallDevices {
+      display: none;
+   }
+
+   .sideTitleMenu {
+      font-weight: 700;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      padding-left: 32px;
+   }
+
+   .sideMenuButtons {
+      margin-left: 32px;
+
+      .sideMenuItem {
+         position: relative;
+         color: mixin.$secondaryColorText;
+         display: flex;
+         text-decoration: none;
+         align-items: center;
+         min-height: 72px;
+
+         .sideMenuIcon {
+            display: flex;
+         }
+
+         .sideMenuText {
+            margin-left: 16px;
+            font-weight: 600;
+         }
+
+         .sideMenuArrow {
+            position: absolute;
+            right: 20px;
+         }
+
+         .sideMenuArrow.down {
+            transform: rotate(180deg);
+         }
+
+         .menuItemSelected {
+            position: absolute;
+            width: 6px;
+            height: 37px;
+            right: -3px;
+            background: mixin.$headerColor;
+            border-radius: 5px;
+         }
+      }
+
+      .sideMenuItem:hover {
+         opacity: mixin.$hoverOpacity;
+      }
+   }
+}
+
+.SideMenu::-webkit-scrollbar {
+   display: none
+}

@@ -1,0 +1,30 @@
+@use "../mixin.scss" as mixin;
+
+.Page {
+    width: calc(100% - 300px);
+    height: calc(100vh - 80px);
+    overflow-y: scroll;
+    padding: 32px;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    @include mixin.smallDevices {
+        width: 100%;
+    }
+
+    p {
+        font-size: mixin.$textSize;
+    
+        a {
+            color: mixin.$linkColor;
+        }
+    }
+    
+    .sectionContent p:not(:last-child) {
+        margin-bottom: 20px;
+    }
+}
+
+.Page::-webkit-scrollbar {
+    display: none
+}

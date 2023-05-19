@@ -1,0 +1,40 @@
+@use "../../mixin.scss" as mixin;
+
+.Header {
+    background: mixin.$headerColor;
+    color: mixin.$lightColorText;
+    height: 80px;
+    font-weight: 700;
+    font-size: mixin.$textSize;
+    line-height: mixin.$textLineHeigth;
+    padding: 0 32px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    box-sizing: border-box;
+    @include mixin.extraSmallDevices {
+        flex-direction: column;
+        height: 110px;
+    }
+
+    .logo {
+        height: inherit;
+        display: flex;
+        align-items: center;
+
+        .logoText {
+            padding-left: 24px;
+        }
+    }
+    
+    .user {
+        height: inherit;
+        display: flex;
+        align-items: center;
+
+        .userText {
+            padding-left: 16px;
+        }
+    }
+}
